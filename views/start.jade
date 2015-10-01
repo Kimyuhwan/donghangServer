@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+    head
+        title= title
+        script(type='text/javascript').
+            var invitation_code = "#{invitation_code}";
+            var now = new Date().valueOf();
+            setTimeout(function () {
+                if (new Date().valueOf() - now > 200)
+                    window.location = "http://www.naver.com";
+            }, 100);
+            window.location = "donghang://" + invitation_code;
+    body
+                  
