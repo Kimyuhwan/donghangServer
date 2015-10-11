@@ -7,7 +7,8 @@ var Schema = mongoose.Schema;
 
 // create a schema
 var groundSchema = new Schema({
-  ground_id: {type: String },
+  ground_id: {type: String, unique: true },
+  ground_name: {type: String},
   accel_x: [String],
   accel_y: [String],
   accel_z: [String]
