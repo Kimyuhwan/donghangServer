@@ -272,5 +272,24 @@ router.post('/collection', function(req, res) {
 
 });
 
+router.get('/getcollection', function(req, res) {
+
+    console.log('get collection');
+
+    Collection.find({}, function(err, collections) {
+        if(err) {
+            res.json({type: false});
+        } else {
+            if(collections) {
+                console.log('successfully get collections');
+                res.json({type: true, data: collections});
+            } else {
+                res.json({type: false});
+            }
+        }
+    });
+
+});
+
 
 module.exports = router;

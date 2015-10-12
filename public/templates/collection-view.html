@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<!-- collection-view.html -->
+<div class="container-fluid">
 
-</body>
-</html>
+      <div class="row row-offcanvas row-offcanvas-left">
+
+         <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
+
+            <ul class="nav nav-sidebar" ng-repeat="collection_name in collections_name">
+              <li><md-button ng-click="loadCollection(collection_name)">{{collection_name | date:"yyyy/MM/dd 'at' h:mma"}}</md-button></li>
+            </ul>
+        </div><!--/span-->
+
+        <div class="col-sm-9 col-md-10 main">
+            <h3>{{current_collection_id | date:"yyyy/MM/dd 'at' h:mma"}}</h3>
+
+            <div style="width: 100%;">
+                <canvas id="line" class="chart chart-line" chart-data="data"
+                  chart-labels="labels" chart-legend="true" chart-series="series"
+                  chart-options="option" >
+               </canvas>
+            </div>
+
+        </div><!--/row-->
+	</div>
+</div><!--/.container-->

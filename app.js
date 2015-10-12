@@ -47,7 +47,7 @@ app.use('/invitations', invitations);
 app.use('/gestures', gestures);
 app.use('/gesture_test', gesture_test);
 
-mongoose.connect('mongodb://nclab:nclab@localhost:27017/donghang', {auth:{authdb:"admin"}});
+//mongoose.connect('mongodb://nclab:nclab@localhost:27017/donghang', {auth:{authdb:"admin"}});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
